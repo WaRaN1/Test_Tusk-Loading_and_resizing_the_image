@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Завантаження зображення</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+</head>
+<style>
+    form {
+            text-align: center;
+            align-items: center;
+            height: 50vh;
+        }
+</style>
+</head>
+<body>
+<form method="post" action="{% url 'upload_image' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Завантажити</button>
+</form>
+</body>
+</html>

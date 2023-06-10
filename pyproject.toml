@@ -1,0 +1,28 @@
+[build-system]
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "your-project-name"
+version = "0.1.0"
+description = "Your project description"
+authors = ["Your Name <your-email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "~=4.2.1"
+Pillow = "~=9.5.0"
+django-celery-result = "~=2.5.1"
+djangorestframework = "~=3.14.0"
+eventlet = "~=0.33.3"
+flower = "~=1.2.0"
+pre-commit = "~=2.15.0"
+
+
+[build-system]
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
+
+[build-system]
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"

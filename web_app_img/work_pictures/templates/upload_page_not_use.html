@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload_file</title>
+  <link rel="stylesheet" href="static/css/upload_file.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <header>File Uploader</header>
+    <form action="#">
+      <input class="file-input" type="file" name="file" hidden>
+      <i class="fas fa-cloud-upload-alt"></i>
+      <p>Browse File to Upload</p>
+      <p1>{{image_id}}</p1>
+    </form>
+    <section class="progress-area"></section>
+    <section class="uploaded-area"></section>
+    <form method="post" action="{% url 'add_file_img' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Завантажити</button>
+
+</form>
+  </div>
+
+  <script src="static/upload_file.js"></script>
+
+</body>
+</html>
