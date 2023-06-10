@@ -1,12 +1,12 @@
 from django.shortcuts import render
+from rest_framework.parsers import MultiPartParser
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .forms import ImgForm
 from .models import PictureSaveVariations
 from django.http import HttpResponseNotFound, HttpResponse
-
-from .serializers import ImageSerializers
 from .tasks import optimize_image_with_quality_levels
+from .serializers import ImageSerializers
 
 class UploadImageView(APIView):
     def post(self, request):
@@ -24,7 +24,6 @@ class UploadImageView(APIView):
                 'file_50_url': f'http://127.0.0.1:8000/download-image/?id={image_id}&quality=50',
                 'file_25_url': f'http://127.0.0.1:8000/download-image/?id={image_id}&quality=25',
             })
-
 
 
 class DownloadImageView(APIView):
